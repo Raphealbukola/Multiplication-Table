@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <section style="height: 100vh; " class="">
+        <div class="mx-auto col-lg-8 col-md-9 h5 col-sm-12 pt-4">
+            <label for="">Columns</label>
+            <input type="number" id="co">
+            <label for="">Rows</label>
+            <input type="number" id="ro">
+            <label for="">Evaluation</label>
+            <select id="pick">
+            <option value="0">select option</option>
+            <option value="1">Multiplication</option>
+            <option value="2">Addition</option>
+            <option value="3">Subtraction</option>
+            <option value="4">Division</option>
+            </select>
+            <button onclick="display()">make me a Table</button>
+        </div>
+        <div align="center" class="h5" id="wow"></div>
+        <div align="center" class="" id="result">
+           
+        </div>
+    </section>
+    <script>
+        function display() {
+
+            var m = parseInt(co.value);
+            var s = parseInt(ro.value);
+        
+            var take = pick.options[pick.selectedIndex].value
+             if (take ==0 && !m && !s) {
+           wow.innerHTML = "Please File Up The Input At The Top"
+
+            }
+            else if (!m &&!s) {
+                wow.innerHTML = "Select Columns and Row First"
+            }
+            else if (!m) {
+                wow.innerHTML = "Select Columns "
+            }
+            else if (!s) {
+                wow.innerHTML = "Select Row"
+            }
+            else if (take == 0) {
+                wow.innerHTML = "Please Select The Operation To Perform"
+
+            }
+            let tbs;
+            tbs = "<table border=1>"
+        
+            if(take == 1){
+                for(let r = 1; r <= s ;r++){
+                    tbs +="<tr>"
+        for(let i = 1; i <= m;i++){
+            
+            
+            tbs+=`<td> ${i+"x"+r}=${r*i}</td>`;
+        }
+        tbs +="</tr>"
+    }
+    tbs+="</table>"
+    result.innerHTML = tbs
+            }
+            
+    else if (take == 2){
+        let tbs;
+            tbs = "<table border=1>"
+        for(let r = 1; r <= s ;r++){
+            tbs +="<tr >"
+        for(let i = 1; i <= m;i++){
+
+            tbs+=`<td> ${i+"+"+r}=${r+i} </td> `;
+        }
+        tbs +="</tr>"
+    }
+    tbs +="</table>"
+    result.innerHTML = tbs
+    }
+    else if (take == 3){
+        let tbs;
+        tbs = "<table border=1>"
+        for(let r = 1; r < s ;r++){
+            tbs +="<tr>"
+        for(let i = 1; i < m;i++){
+    
+            tbs+=`<td>${i+"-"+r}=${r-i} </td>`;
+        }
+        tbs+="</tbs>"
+    }
+    tbs+="</tabls>"
+    result.innerHTML = tbs
+    }
+    
+    else if (take == 4){
+        let tbs;
+         tbs ="<table border=1>"
+        for(let r = 1; r < s ;r++){
+            tbs+="</tr>"
+        for(let i = 1 ; i < m;i++){
+            
+            tbs+=`<td>${i+"/"+r}=${r/i}</td>`;
+        }
+        tbs+="</tr>"
+    }
+    tbs+="</table>"
+    result.innerHTML += tbs
+    }
+    
+       
+        }
+    </script>
+</body>
+
+</html>

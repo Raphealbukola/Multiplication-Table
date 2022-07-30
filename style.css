@@ -1,0 +1,31 @@
+section{
+    background-image: url(/img/ss8.jpg);
+}
+input{
+    border-radius: 20px;
+    background-color:rgb(250, 193, 87);
+}
+button{
+    border-radius: 20px;
+    background-color:gainsboro;
+}
+select{
+    border-radius: 20px;
+    background-color:rgb(250, 193, 87);
+}
+#result{
+    background-color: rgb(250, 193, 87);
+    
+}
+table{
+    border:3px solid ;
+}
+tr{
+    border: solid gainsboro;
+}
+td{
+    border: solid gray;
+    
+    padding-left: 2px;
+    padding-right: 2px;
+}
